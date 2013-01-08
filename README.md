@@ -11,4 +11,4 @@ Bonus point for
 -   Responsive Design
 -   Use HTML5 features
 -   Blazing Fast JS Code
--   Supports for everything
+-   Support for everything
