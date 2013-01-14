@@ -1,0 +1,118 @@
+/*
+* *************************************************************
+* fashiolista CSS logo
+* *************************************************************
+*/
+
+.logo { 
+  width: $flLogoSize;
+  position: relative;
+  display: inline-block; // without the croww brower mixin because anyway I won't display this below IE8
+  cursor:pointer;
+  text-align:center;
+  @include opacity(.95);
+  @include transition(opacity .5s ease);
+
+  .icon-heart {
+    color:$flRed;
+    line-height: $flLogoSize;
+    font-size: $flLogoSize / 2;
+    text-shadow: 1px -1px 0px rgba(#222, .25);
+    padding:0 !important;
+    @include transition(all .5s ease);
+  }
+
+  &:hover {
+
+  	@include opacity(1);
+
+    .icon-heart {
+      text-shadow: -$flLogoSize/50 $flLogoSize/50 $flLogoSize/50 rgba(#222, .15);
+      font-size: $flLogoSize / 1.9;
+      
+    }
+    .logo-in {
+      top: 1%;
+      left:1%;
+      width: 98%;
+      height: 98%;      
+      @include box-shadow(-$flLogoSize/50 $flLogoSize/50 $flLogoSize/50 rgba(#222, .15));
+    }
+  }
+}
+
+.logo-in {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border:solid 1px #fafafa;
+  @include border-radius(9999px);
+  @include box-shadow(-$flLogoSize/50 $flLogoSize/50 $flLogoSize/25 rgba(#222, .10));
+  @include transition(all .5s ease);
+}
+.logo-dummy {
+  margin-top:100%;
+}
+
+.icon-logo {
+  color:$flRed;
+  //text-shadow:@include text-shadow;
+}
+
+
+/*
+* *************************************************************
+* fashiolista IMAGE logo
+* *************************************************************
+*/
+
+#logo { 
+  background: url('../images/logo_fashiolista_700x350_new.png') no-repeat center;
+  width: 700px;
+  height: 350px;
+  max-width:100%
+}
+
+
+/*
+* *************************************************************
+* fashiolista HEART CSS3
+* *************************************************************
+*/
+
+@mixin flHeartCSS3($size: 32px) {
+//USAGE: .heart { @include flHeartCSS3(44px);}
+	position: relative;
+	font-size: $size;
+	margin:-0.5em 0 0 0.6em;
+	width:0;
+	height:0;
+	
+	&:before, &:after {
+		position: absolute;
+		content: "";
+		width: 1em;
+		height: 1.5em;
+		background: #cc0000;
+		@include border-radius(1em 1em 0 0);
+	}
+	&:before {
+		left: -0.4em;
+		@include rotate(-45deg);
+		@include box-shadow($size/15 (-$size/15) $size/6 rgba(0,0,0,.25), inset 0 $size/10 $size/6 lighten($flRed,40));
+		border-left:1px solid lighten($flRed,20);
+	}
+	&:after {
+		@include rotate(45deg);
+		@include box-shadow($size/15 (-$size/15) $size/10 rgba(0,0,0,.25), inset (-$size/10) $size/10 $size/6 darken($flRed,10));
+		border-right:$size/20 solid darken($flRed,20);
+	}
+
+	@include transition(all .5s ease-in-out);
+
+	&:hover {
+		@include scale(1.1);
+	}
+}

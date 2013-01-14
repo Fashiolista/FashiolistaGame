@@ -1,0 +1,31 @@
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'fontawesome-webfont';
+  font-style: normal;
+  font-weight: normal;
+/* fix buttons height */
+  line-height: 1em;
+/* you can be more comfortable with increased icons size */
+/* font-size: 120%; */
+}
+
+.icon-up-hand { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x261d;&nbsp;'); }
+.icon-down-hand { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x261f;&nbsp;'); }
+.icon-th-list { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x2630;&nbsp;'); }
+.icon-heart-empty { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x2661;&nbsp;'); }
+.icon-heart { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x2665;&nbsp;'); }
+.icon-th { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x268f;&nbsp;'); }
+.icon-cog-alt { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#x26ef;&nbsp;'); }
+.icon-help-circle { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe704;&nbsp;'); }
+.icon-basket { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe73d;&nbsp;'); }
+.icon-resize-full { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe744;&nbsp;'); }
+.icon-resize-small { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe746;&nbsp;'); }
+.icon-certificate { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0a3;&nbsp;'); }
+.icon-menu { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0c9;&nbsp;'); }
+.icon-mail-alt { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf0e0;&nbsp;'); }
+.icon-desktop { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;&nbsp;'); }
+.icon-laptop { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;&nbsp;'); }
+.icon-tablet { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10a;&nbsp;'); }
+.icon-mobile { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;&nbsp;'); }
+.icon-github { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf113;&nbsp;'); }
+.icon-linkedin-squared { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf30c;&nbsp;'); }
