@@ -1,0 +1,57 @@
+/*
+* *************************************************************
+* fashiolista User CARD
+* *************************************************************
+*/
+
+.user-card {  
+	position:absolute;
+    left:0;  
+    top:100%;
+    width: 100%;
+    min-height:196px;
+    display:none;
+    z-index: 90000;
+}
+.card-in {
+    padding:10px 20px 20px;
+    background: #fff;
+    color:#999;
+    border:1px solid #ddd;
+    text-align:left;
+    font-size:12px;
+    line-height:15px;
+    @include border-corner-radius(bottom,right,50px);
+    @include box-shadow(-2px 5px 10px rgba(0,0,0,.5));
+}
+
+.no-touch .user-card {  
+    
+}
+
+.card-top-bar {
+	background: #222;
+	margin-top:-10px;
+	width:106%;
+	margin-left:-3%;
+	padding:10px 0;
+	color:#fff;
+
+}
+
+.user-img-s {
+	width:80px;
+	height:80px;
+	margin-top:10px;
+}
+
+.user-name {
+	color:#cc0000;
+	font-size: 1.5em
+}
+
+.time {
+	color:$flGreyLight;
+	display: block;
+	margin-top:5px;
+}

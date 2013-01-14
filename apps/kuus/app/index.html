@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Fashiolista Game | by kuus</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
+        <meta name="HandheldFriendly" content="true">
+        <meta name="MobileOptimized" content="width">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <link rel="stylesheet" href="styles/main.css">
+        <!--[if IE 7]><link rel="stylesheet" href="styles/ie/font-awesome-ie7.min.css"><![endif]-->
+        <script src="scripts/vendor/modernizr.min.js"></script>
+
+    </head>
+    <body class="noise">
+        <div id="wrap">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="brand" href="http://www.fashiolista.com/"><i class="icon-heart-empty"></i> fashiolista</a>
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			        <span class="icon-th"></span>
+			      </a>
+			      <div class="nav-collapse collapse">
+	                  <ul class="nav pull-right">
+	                    <li class="dropdown">
+	                      <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog-alt"></i></a>
+	                      <ul class="dropdown-menu" role="menu">
+	                      	<li class="nav-header">tools I used here</li>
+	                        <li class="divider"></li>
+	                        <li><a href="http://yeoman.io/">Yeoman</a></li>
+	                        <li><a href="http://html5boilerplate.com/">HTML5 Boilerplate</a></li>
+	                        <li><a href="http://compass-style.org/">Compass</a></li>
+	                        <li><a href="https://github.com/jlong/sass-twitter-bootstrap">SASS Twitter Bootstrap</a></li>
+	                        <li><a href="http://jquery.com/">jQuery</a></li>
+	                        <li><a href="http://modernizr.com/">Modernizr</a></li>
+	                        
+	                        <li><a href="http://olado.github.com/doT/index.html">doT</a></li>
+	                      </ul>
+	                    </li>
+	                    <li class="dropdown">
+	                      <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+	                        <i class="icon-help-circle"></i>
+	                      </a>
+	                      <ul class="dropdown-menu" role="menu">
+	                        <li class="nav-header">made by kuus</li>
+	                        <li class="divider"></li>
+	                        <li><a href="https://github.com/kuus"><i class="icon-github"></i>github</a></li>
+	                        <li><a href="http://www.linkedin.com/in/kunderikuus/"><i class="icon-linkedin-squared"></i>LinkedIn</a></li>
+	                        <li><a href="mailto:k6@kunderikuus.net"><i class="icon-mail-alt"></i> mail me</a></li>
+	                      </ul>
+	                    </li>            
+	                  </ul>
+	              	</div>
+                </div>
+              </div>
+            </nav>
+            <header id="header">
+            	<div class="container-fluid">
+				  <div class="row-fluid">
+				    <div class="span10">
+				    	<hgroup>
+	                    	<h1 class="page-title fit">fashiolista Game</h1>
+		                    <h2>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti..
+	                    	</h2>
+	                	</hgroup>
+				    </div>
+				    <div class="span5">
+					    <div class="logo">
+		                    <div class="logo-dummy"></div>
+		                    <div class="logo-in">
+		                        <div class="logo-round">
+		                            <i class="icon-heart"></i>
+		                        </div>
+		                    </div>
+		                </div>
+				  	</div>
+				  </div>
+				  	<button class="span3 offset1 btn btn-danger btn-large" id="start"><i class="icon-down-hand special"></i> START</button>
+				  	<div id="controls" class="btn-toolbar span">
+				  		<div class="btn-group">
+					  		<a class="btn btn-inverse" href="#">Popular</a>
+					  		<a class="btn btn-inverse" href="#">All</a>
+					  		<a class="btn btn-inverse" href="#">Fresh</a>
+					  		<a class="btn btn-inverse" href="#">Followed</a>
+					  	</div>
+					</div>
+            </header>
+            <section id="view" class="container-fluid">
+                <!-- template engine results-->
+            </section>
+            <div id="push"></div>
+        </div>
+        <footer id="footer">
+            <div class="container">
+            	<ul class="footer-list inline">
+            		<li><i class="icon-mobile"></i> Mobile</li>
+            		<li><i class="icon-tablet"></i> Tablet</li>
+            		<li><i class="icon-laptop"></i> Laptop</li>
+            		<li><i class="icon-desktop"></i> Desktop</li>
+            	</ul>
+          	</div>
+          <div id="back-top">Top</div>
+        </footer>
+        <script type="text/x-dot-template" id="view-item">
+            <article rel="{{=it.created_by}}" data-item-loves="{{=it.loves}}" data-item-date="{{=it.created_at}}" data-user-id="{{=it.created_by}}" class="item span3" >
+                <a href="{{!it.redirect_url}}" alt="{{=it.name}}">
+                	<img src="{{!it.image}}" title="" alt="{{=it.name}}" width="126" height="126"/>
+                </a>
+                <div rel="{{=it.id}}" class="user-card">
+                	<div class="card-top-bar">
+                		<span class="loves"><i class="icon-heart"></i> {{=it.loves}}</span>
+                	</div>
+                	<div class="card-in">
+	                    <a href="{{=it.creator_website}}"/><img class="user-img-s" src="{{!it.creator_img}}" width="150" height="150"/></a>
+	                    <a href="http://www.fashiolista.com{{=it.creator_url}}"><span class="user-name">{{=it.creator_name}}</span></a> found this at <a href="{{=it.site_domain}}" target="_blank" title="View the shop website">{{=it.site_domain}}</a>
+	                    <time datetime="{{=it.created_at}}" class="time">{{=it.createdDateFormatted}}</time>
+	                </div>
+                </div>
+            </article>
+        </script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="scripts/vendor/jquery.min.js"><\/script>')</script>
+   
+    <!-- build:js scripts/plugins.js
+    <script src="scripts/vendor/doT.js"></script>
+    <script src="scripts/vendor/jquery.timeago.js"></script>
+    <script src="scripts/vendor/jquery.fittext.js"></script>    
+    <script src="scripts/vendor/bootstrap/bootstrap-dropdown.js"></script>
+    <script src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/amd-app.js -->
+    <script data-main="scripts/main" src="scripts/vendor/require.js"></script>
+    <script data-main="scripts/main" src="scripts/vendor/doT.js"></script>
+    <script data-main="scripts/main"  src="scripts/vendor/jquery.timeago.js"></script>
+    <script data-main="scripts/main" src="scripts/vendor/jquery.fittext.js"></script>    
+    <script data-main="scripts/main" src="scripts/vendor/bootstrap/bootstrap-dropdown.js"></script>
+    <script data-main="scripts/main" src="scripts/vendor/bootstrap/bootstrap-collapse.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
