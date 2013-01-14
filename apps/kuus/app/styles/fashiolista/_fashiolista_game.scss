@@ -1,0 +1,155 @@
+/*
+* *************************************************************
+* fashiolista Game specific SCSS
+* *************************************************************
+*/
+
+body { 
+  @include flFontBody();
+  background:#7D7775;
+  overflow-y: scroll;  
+}
+
+#header {
+  padding: 80px 0 20px;
+	
+  hgroup {
+    text-align:right;
+    margin-bottom:20px;
+  }
+
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+    color:#dedede;
+    @include flTextEmboss();
+  }
+}
+
+#view { 
+  display:none;
+  width:90%;
+  margin: 0 auto;
+  padding-top:20px;
+  padding-bottom:200px;
+}
+
+.no-js #view { 
+  display:block 
+}
+
+#view:hover .item {
+  @include opacity(.8)
+};
+#view:hover .item:hover {
+  @include opacity(1)
+};
+
+
+#controls { 
+  display:none;
+}
+
+.no-js #controls { 
+  display:block;
+}
+
+.item { 
+  list-style:none;
+  padding:20px 0;
+  margin-bottom:20px;
+  border:1px solid #666;
+  text-align:center;
+  background: white;
+  position:relative;
+  @include border-radius(4px);
+  @include transition(border-radius .1s linear);
+
+  // .shade {
+  //   position: absolute;
+  //   top:0;
+  //   left:0;
+  //   height: 100%;
+  //   width: 100%;
+  //   z-index:-1;
+  // }
+
+  &:hover{
+
+    @include box-shadow(0px -5px 10px rgba(0,0,0,.4));
+
+    // .shade {
+    //   @include background(linear-gradient(top left, #000, #666));
+    //   @include opacity(.05);
+    //   z-index:1;
+    // }
+    
+  }
+
+}
+.soften {
+	@include border-corner-radius(top,left,50px);
+	@include border-corner-radius(top,right,0px);
+}
+
+#footer {
+  background: #222;
+  color: #666;
+  text-align:center;
+  font-size: 12px;
+  line-height: 14px;
+  @include box-shadow(0 -5px 10px rgba(0,0,0,.25));
+
+  .container {
+    padding: 20px;
+  }
+}
+
+@include stickyFooter(60px);
+
+.footer-list li {
+	@include inline-block(middle);
+	padding:0 10px;
+}
+
+#start, #controls .btn-toolbar, .item {
+	@include single-box-shadow(rgba(0,0,0,.3),-2px,2px,5px);
+}
+
+#back-top { 
+  display:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:20px;
+  width:60px;
+  height:60px;
+  background:#222;
+  text-align:center;
+  border:1px solid rgba(255,255,255,.5);
+  @include border-radius(9999px);
+  @include opacity(.4);
+  color:#fff;
+  cursor:pointer;
+
+  &:hover {
+    @include opacity(.8);
+    @include transition(opacity .5s ease);
+  }
+}
+
+.no-js #back-top { 
+  display:block;
+}
+
+@media (max-width: 767px) {
+
+	#header {
+		padding: 20px 0;
+	}
+	#header, header h1, #header h2, #start {
+		text-align:center;
+		margin:10px auto;
+		padding:20px;
+	}
+}

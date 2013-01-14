@@ -1,0 +1,162 @@
+/*
+* *************************************************************
+* fashiolista MIXINS
+* *************************************************************
+*/
+
+// FONTS
+// --------------------------------------------------
+@mixin flFontBody() {
+  font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif;
+}
+
+@mixin flTextEmboss(){
+	text-shadow: 0px 1px 0px rgba(255,255,255,.3), 0px -1px 0px rgba(0,0,0,.3);
+	@include opacity(.7);
+}
+
+@mixin flLetterpress($opacity){
+    text-shadow:white($opacity) 0 1px 0;
+}
+
+
+// BOX EFFECTS
+// --------------------------------------------------
+@mixin flBoxEmboss($opacity, $opacity2){
+    box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+}
+@mixin flBoxCurlyShadow($opacity: 0.5){
+	position: relative;
+
+	&:before, &:after {
+		z-index: -1;
+		position: absolute;
+		content: "";
+		bottom: 15px;
+		width: 45%;
+		top: 80%;
+		@include box-shadow(0 15px 10px rgba(0, 0, 0, $opacity))
+	}
+
+	&:before { 
+		left: 10px;
+		@include rotate(-3deg);
+	}
+	&:after {
+		right:10px;
+		//left: auto;
+		@include rotate(3deg);
+	}
+}
+
+// MISC UI
+// --------------------------------------------------
+@mixin flSeparator() {
+	box-shadow: 0 1px rgba(255, 255, 255, 0.4),inset 0 -1px rgba(0, 0, 0, 0.2);
+}
+
+// STICKY FOOTER
+// --------------------------------------------------
+@mixin stickyFooter($footerHeight){
+	html,
+	body {
+	    height: 100%;
+	}
+	 
+	#wrap {
+	    min-height: 100%;
+	    height: auto !important;
+	    height: 100%;
+	    margin: 0 auto -1*$footerHeight;
+	}
+	#push,
+	#footer {
+	    height: $footerHeight;
+	}
+}
+
+// SHAPES
+// --------------------------------------------------
+@mixin flTriangle($dir, $size, $color) {
+    border: $size transparent solid;
+ 	content:"";
+ 	position:absolute; 	
+    @if ($dir == "top" or $dir == "up" or $dir == "left" or $dir == "before") {
+        &:before {
+            @if ($dir == "top" or $dir == "up") {
+                border-bottom-color: $color;
+            }
+            @else if ($dir == "right" or $dir == "after") {
+                border-left-color: $color;
+            }
+        }
+    }
+    @else if ($dir == "bottom" or $dir == "down" or $dir == "left" or $dir == "before") {
+        &:after {
+            @if ($dir == "bottom" or $dir == "down") {
+                border-top-color: $color;
+            }
+            @else if ($dir == "left" or $dir == "before") {
+                border-right-color: $color;
+            }
+        }
+    }
+}
+
+// RIBBONS
+// --------------------------------------------------
+/*
+@mixin simple-ribbon($ribbon-color,$text-color,$container-horizontal-padding,$corner-width: 10px) {
+    background: $ribbon-color;
+    color: $text-color;
+    margin-left: -1*($container-horizontal-padding+$corner-width);
+    margin-right: -1*($container-horizontal-padding+$corner-width);
+    position: relative;
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border-width: 0 $corner-width $corner-width 0;
+        border-style: solid;
+        border-color: transparent darken($ribbon-color,25%);
+    }
+
+    &:after {
+        left: auto;
+        right: 0;
+        border-width: 0 0 $corner-width $corner-width;
+    }
+}
+
+@mixin ribbon(
+	overflow: hidden;
+	// top left corner	
+	position: absolute;
+	right: -3.5em;
+	top: 2.5em;
+	// 45° clockwise rotation:;
+	@include rotate(45deg);
+	@include +box-shadow(0 0 1em #888);
+	@include background-image(linear-gradient(left, #050, #080, #090, #080, #050));
+		&.staging
+			@include background-image(linear-gradient(left bottom, #800, #A00, #B00, #A00, #900));
+ 
+	span {
+		border: 1px solid rgba(255, 255, 255, .6);
+		color: #fff;
+		// text-transform: uppercase
+		font-variant: small-caps;
+		display: block;
+		font-weight: bold;
+		margin: 1px 0;
+		padding: .5em 0;
+		width: 15em;
+		text-align: center;
+		text-decoration: none;
+		text-shadow: 0 0 0.5em #444;
+	}
+);
+*/
